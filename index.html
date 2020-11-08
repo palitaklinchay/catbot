@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>กรอกข้อมูล</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+    <!-- Special version of Bootstrap that is isolated to content wrapped in .bootstrap-iso -->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" />
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+</head>
+  <body>
+  
+      <style>
+          img{
+              height: 200px;
+              width: 200px;
+              border-radius: 8px;
+              border: 1px solid black;
+              
+          }
+          body {
+                background: #007bff;
+                background: linear-gradient(to right, #0062E6, #33AEFF);
+                }
+      </style>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">แชทบอทสนับสนุนการตามหาแมว
+                </h5>
+                <form class="form-signin">
+                  <div class="form-label-group">
+                            <div class="form-group">
+                                <label class="control-label  requiredField">พันธ์ุแมว
+                                <!-- <input type="text" name="name" placeholder="ชื่อคลินิก" class="form-control"> -->
+                                    <select type="text" name="name" id="breed" class="form-control">
+                                        <option value="อเมริกันช็อตแฮร์">อเมริกันช็อตแฮร์</option>
+                                        <option value="แมวดำ">แมวดำ</option>
+                                        <option value="แมวขาวดำ">แมวขาวดำ</option>
+                                        <option value="ขาวมณี">ขาวมณี</option>
+                                        <option value="เมนคูน">เมนคูน</option>
+                                        <option value="แมวส้ม">แมวส้ม</option>
+                                        <option value="เปอร์เซีย">เปอร์เซีย</option>
+                                        <option value="สก็อตติทโฟล์ด">สก็อตติทโฟล์ด</option>
+                                        <option value="สีสวาท">สีสวาท</option>
+                                        <option value="แมวสามสี">แมวสามสี</option>
+                                    </select>
+                                </label><br>
+                                    
+                                        วัน/เดือน/ปี ที่แมวหาย
+                                    <input id="datepicker" width="276" />
+                                        <script>
+                                        $('#datepicker').datepicker({
+                                            uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                                    
+                                    </div>
+                                    <form>
+                                        <div class="form-group" >
+                                        <label for="exampleInputEmail1">ที่อยู่</label>
+                                        <input type="email" class="form-control col-sm-8" id="province" aria-describedby="emailHelp">
+                                        
+                                        </div>
+                                        <div class="form-group">
+                                        <label for="exampleInputPassword1">การติดต่อ</label>
+                                        <input type="text" class="form-control col-sm-8" id="contact">
+                                        </div>
+                                        </form>
+                                    
+                                    
+                                    
+                                    <img id="myimg"> <label id="UpProgress"></label> <br><br>
+                                    <button type="button" class="btn btn-primary" id="select">เลือกรูปภาพ</button>
+                                    <button type="button" class="btn btn-success" id="upload">บันทึก</button>
+                                    <a class="btn btn-info" href="table.html" role="button">ดูข้อมูล</a>
+                                    <div display: none; id="retrieve"></div>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+         
+        </div>
+         <!-- ใส่ชื่อ <input id="namebox1" type="text">
+         <img id="myimg1"> 
+
+         <table class="alt" id="tbresult">
+            <thead>
+                <tr>
+                    <td>ชื่อ-นามสกุล</td>
+                    <td>พันธุ์แมว</td>
+                    <td>รูป</td>
+                 
+                  </tr>
+            </thead>
+        </table>		 -->
+        <!-- </form> -->
+        
+    </div>      
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script> 
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+        apiKey: "AIzaSyAmzJsR1FzPCbMAdeVrWuGkD7eDY1nCVWk",
+        authDomain: "cat-project-562bd.firebaseapp.com",
+        databaseURL: "https://cat-project-562bd.firebaseio.com",
+        projectId: "cat-project-562bd",
+        storageBucket: "cat-project-562bd.appspot.com",
+        messagingSenderId: "769170267287",
+        appId: "1:769170267287:web:a152ee48e53717040f1dd2",
+        measurementId: "G-VHZTS8HL9K"
+    };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+ 
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
